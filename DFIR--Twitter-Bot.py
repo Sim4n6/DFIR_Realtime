@@ -1,7 +1,7 @@
 from flask import Flask
-from tweepy import API,OAuthHandler
+from tweepy import API, OAuthHandler
 
-from keys import consumer_key,consumer_secret, access_token,access_token_secret
+from keys import consumer_key, consumer_secret, access_token, access_token_secret
 
 app = Flask(__name__)
 
@@ -18,7 +18,9 @@ def index():
 	for tweet in public_tweets:
 		print(tweet.text)
 
-	return "Hello World!" + str(tweet.text)
+	search_tags = api.search("#DFIR")
+	last_tweet = search_tags[0]
+	return "Hello World! \n" + str(last_tweet.text)
 
 
 if __name__ == '__main__':
