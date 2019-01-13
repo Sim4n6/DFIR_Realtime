@@ -1,1 +1,1 @@
-web: gunicorn DFIR--Twitter-Bot.py
+web: gunicorn DFIR--Twitter-Bot
