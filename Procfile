@@ -1,1 +1,1 @@
-web: gunicorn DFIR--Twitter-Bot
+web: gunicorn DFIR--Twitter-Bot:app
