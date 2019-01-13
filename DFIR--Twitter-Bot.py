@@ -1,6 +1,8 @@
 from flask import Flask
 from tweepy import API, OAuthHandler
 
+import pprint
+
 from keys import consumer_key, consumer_secret, access_token, access_token_secret
 
 app = Flask(__name__)
@@ -15,7 +17,11 @@ def index():
 
 	# Search for tag "DFIR" and get last_tweet
 	api = API(auth)
-	search_tags = api.search("#DFIR")
+	search_tags = api.search("#DFIR", lang='en', rpp=30)
+	pp = pprint.PrettyPrinter(indent=4)
+	pp.pprint(search_tags)
+
+	# get last tweet
 	last_tweet = search_tags[0]
 
 	# store id of last_week_tweet in a file
@@ -26,7 +32,7 @@ def index():
 	with open("last_week_id.txt") as lst_hd:
 		line = int(lst_hd.read())
 
-	return "Hello World! <br> >" + str(last_tweet.text) + "<br> >" + str(line)
+	return "Hello World! <br><br>" + str(last_tweet.text) + "<br><br>" + str(line)
 
 
 if __name__ == '__main__':
