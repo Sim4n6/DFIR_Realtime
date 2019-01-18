@@ -49,8 +49,8 @@ def index():
 	# url_random_photo = json_random_photo['urls']['raw']
 	# print(url_random_photo)
 
-	#return render_template("base.html", tweet=last_tweet.text, line=line, bg_photo=url_random_photo)
-	return "hello"
+	return render_template("base.html", tweet=last_tweet.text, line=line, bg_photo=url_random_photo)
+
 
 
 if __name__ == '__main__':
