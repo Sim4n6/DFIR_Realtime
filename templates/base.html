@@ -2,26 +2,38 @@
 
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
 
-  <title>Py_Twitter_Bot--DFIR</title>
+    <title>Py_Twitter_Bot--DFIR</title>
 
-  <style>
+    <style>
     body {
       background-image: url({{ bg_photo_url | safe }});
       background-position: center center;
       background-repeat:no-repeat;
       background-color: lightblue;
     }
-  </style>
+
+    fieldset {
+      display: block;
+      margin-left: 2px;
+      margin-right: 2px;
+      padding-top: 0.35em;
+      padding-bottom: 0.625em;
+      padding-left: 0.75em;
+      padding-right: 0.75em;
+      border: 2px groove (internal value);
+    }
+
+    </style>
 
 </head>
 
 <body>
-  <fieldset>
-    <legend>Tweet : </legend>
-    {{ tweet }}<br />
-    {{ line }} <br />
-  </fieldset>
+<fieldset>
+    <legend>Tweet :</legend>
+    {{ tweet }}<br/>
+    {{ line }} <br/>
+</fieldset>
 </body>
 </html>
