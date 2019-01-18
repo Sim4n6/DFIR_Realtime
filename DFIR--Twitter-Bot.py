@@ -1,5 +1,7 @@
-from flask import Flask
+from flask import Flask, render_template
 from tweepy import API, OAuthHandler
+from unsplash.api import Api
+from unsplash.auth import Auth
 
 import pprint
 import os
@@ -36,7 +38,17 @@ def index():
 	with open("last_week_id.txt") as lst_hd:
 		line = int(lst_hd.read())
 
-	return "Hello World! <br><br>" + str(last_tweet.text) + "<br><br>" + str(line)
+	client_id = os.environ['access_key_unsplash']
+	client_secret = os.environ['secret_key_unsplash']
+	redirect_uri = os.environ['redirect_uri_unsplash']
+	code = os.environ['code_unsplash']
+
+	auth = Auth(client_id, client_secret, redirect_uri, code=code)
+	api = Api(auth)
+	json_random_photo = api.photo.random()
+	url_random_photo = json_random_photo['urls']['raw']
+
+	return render_template("base.html", tweet=last_tweet.text, line=str(line), bg_photo=url_random_photo)
 
 
 if __name__ == '__main__':
