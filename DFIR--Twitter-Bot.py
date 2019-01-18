@@ -23,7 +23,7 @@ def index():
 
 	# Search for tag "DFIR" and get last_tweet
 	api = API(auth)
-	search_tags = api.search("#DFIR", lang='en', rpp=30)
+	search_tags = api.search("#DFIR", lang='en', rpp=30, tweet_mode='extended')
 	#pp = pprint.PrettyPrinter(indent=4)
 	#pp.pprint(search_tags)
 
