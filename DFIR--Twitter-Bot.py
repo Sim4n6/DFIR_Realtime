@@ -50,7 +50,7 @@ def index():
 	print(url_random_photo)
 
 	#return render_template("base.html", tweet=last_tweet.text, line=line, bg_photo=url_random_photo)
-	return render_template("base.html")
+	return "hello"
 
 
 if __name__ == '__main__':
