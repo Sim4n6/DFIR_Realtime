@@ -48,8 +48,8 @@ def index():
 	bg_photo = api.photo.random()
 	print(dir(bg_photo), type(bg_photo))
 	print(type(bg_photo[0]), dir(bg_photo[0]))
-	bg_photo_urls = bg_photo[0].urls()
-	bg_photo_raw_url = bg_photo_urls.raw()
+	bg_photo_urls = bg_photo[0].urls
+	bg_photo_raw_url = bg_photo_urls.raw
 
 	return render_template("base.html", tweet=last_tweet.text, line=line, bg_photo=bg_photo_raw_url)
 
