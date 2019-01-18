@@ -46,6 +46,7 @@ def index():
 	auth = Auth(client_id, "", "", "")
 	api = Api(auth)
 	json_random_photo = api.photo.random()
+	print(json_random_photo)
 	urls_random_photo = json_random_photo['urls']
 	for url_random_photo in urls_random_photo:
 		print(url_random_photo)
