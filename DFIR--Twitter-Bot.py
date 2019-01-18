@@ -52,7 +52,7 @@ def index():
 
 	# Get URLs  of the random photo to be set
 	bg_photo_urls = bg_photo[0].urls
-	bg_photo_raw_url = bg_photo_urls.regular
+	bg_photo_raw_url = bg_photo_urls.small
 
 	return render_template("base.html", tweet=last_tweet.text, line=line, bg_photo=bg_photo_raw_url)
 
