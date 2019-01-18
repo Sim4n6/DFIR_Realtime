@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <link rel="favicon icon" href="{{ url_for('static', filename='favicon.ico') }}">
 
     <title>Py_Twitter_Bot--DFIR</title>
 
@@ -13,6 +14,7 @@
       background-repeat:no-repeat;
       background-color: lightblue;
     }
+
     fieldset {
       display: block;
       margin-left: 2px;
@@ -23,17 +25,27 @@
       padding-right: 0.75em;
       border: 2px groove (internal value);
     }
+
+    div {
+        width: 400px;
+        height: 100px;
+        margin: auto;
+    }
+
+
     </style>
 
 </head>
 
 <body>
-<fieldset>
-    <legend>Tweet :</legend>
-    <center>
-        {{ tweet }}<br/>
-        {{ line }} <br/>
-    </center>
-</fieldset>
+<div>
+    <fieldset>
+        <legend>Tweet :</legend>
+        <center>
+            {{ tweet }}<br/>
+            {{ line }} <br/>
+        </center>
+    </fieldset>
+    <div>
 </body>
 </html>
