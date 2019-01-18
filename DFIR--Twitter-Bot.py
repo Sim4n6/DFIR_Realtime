@@ -52,9 +52,9 @@ def index():
 
 	# Get URLs  of the random photo to be set
 	bg_photo_urls = bg_photo[0].urls
-	bg_photo_custom_url = bg_photo_urls.small + "&w=350&h=300&auto=compress"
+	bg_photo_custom_url = bg_photo_urls.small + "&fit=clamp&auto=compress"
 
-	return render_template("base.html", tweet=last_tweet.text, line=line, bg_photo=bg_photo_custom_url)
+	return render_template("base.html", tweet=last_tweet.full_text, line=line, bg_photo=bg_photo_custom_url)
 
 
 if __name__ == '__main__':
