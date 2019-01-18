@@ -45,9 +45,7 @@ def index():
 
 	auth = Auth(client_id, "", "", "")
 	api = Api(auth)
-	id_random_photo = api.photo.random()
-	print(id_random_photo)
-	bg_photo = api.photo.get(id_random_photo[0])
+	bg_photo = api.photo.random()
 
 	return render_template("base.html", tweet=last_tweet.text, line=line, bg_photo=bg_photo)
 
