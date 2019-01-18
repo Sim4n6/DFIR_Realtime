@@ -44,7 +44,7 @@ def index():
 	code = os.environ['code_unsplash']
 
 	auth = Auth(client_id, client_secret, redirect_uri, code)
-	# api = Api(auth)
+	api = Api(auth)
 	# json_random_photo = api.photo.random()
 	# url_random_photo = json_random_photo['urls']['raw']
 	# print(url_random_photo)
