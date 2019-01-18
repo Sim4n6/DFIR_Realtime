@@ -47,6 +47,7 @@ def index():
 	api = Api(auth)
 	json_random_photo = api.photo.random()
 	url_random_photo = json_random_photo['urls']['raw']
+	print(url_random_photo)
 
 	return render_template("base.html", tweet=last_tweet.text, line=str(line), bg_photo=url_random_photo)
 
