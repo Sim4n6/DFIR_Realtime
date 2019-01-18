@@ -54,7 +54,7 @@ def index():
 	bg_photo_urls = bg_photo[0].urls
 	bg_photo_custom_url = bg_photo_urls.raw + "&fit=clamp&h=400&w=350&auto=compress"
 
-	return render_template("base.html", tweet=last_tweet.full_text, line=line, bg_photo=bg_photo_custom_url)
+	return render_template("base.html", tweet=last_tweet.full_text, line=line, bg_photo_url=bg_photo_custom_url)
 
 
 if __name__ == '__main__':
