@@ -43,7 +43,7 @@ def index():
 	redirect_uri = os.environ['redirect_uri_unsplash']
 	code = os.environ['code_unsplash']
 
-	# auth = Auth(client_id, client_secret, redirect_uri, code)
+	auth = Auth(client_id, client_secret, redirect_uri, code)
 	# api = Api(auth)
 	# json_random_photo = api.photo.random()
 	# url_random_photo = json_random_photo['urls']['raw']
