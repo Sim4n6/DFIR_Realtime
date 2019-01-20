@@ -9,7 +9,6 @@
 
     <style>
     body {
-      background-image: url({{ bg_photo_url | safe }});
       background-position: center center;
       background-repeat:no-repeat;
       background-color: lightblue;
@@ -31,8 +30,6 @@
         height: 100px;
         margin: auto;
     }
-
-
     </style>
 
 </head>
@@ -46,6 +43,18 @@
             {{ line }} <br/>
         </center>
     </fieldset>
-    <div>
+
+    <fieldset>
+        <legend>Photo :</legend>
+        <center>
+            <img src="{{ bg_photo_url | safe }}" height="500" width="550">
+        </center>
+    </fieldset>
+</div>
+<div>
+    <fieldset>
+        <legend>DFIR Stream :</legend>
+    </fieldset>
+</div>
 </body>
 </html>
