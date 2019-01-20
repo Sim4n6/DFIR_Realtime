@@ -4,57 +4,38 @@
 <head>
     <meta charset="utf-8">
     <link rel="favicon icon" href="{{ url_for('static', filename='favicon.ico') }}">
-
+    <link href="{{ url_for('static/css', filename='styles.css') }} ">
     <title>Py_Twitter_Bot--DFIR</title>
-
-    <style>
-    body {
-      background-position: center center;
-      background-repeat:no-repeat;
-      background-color: lightblue;
-    }
-
-    fieldset {
-      display: block;
-      margin-left: 2px;
-      margin-right: 2px;
-      padding-top: 0.35em;
-      padding-bottom: 0.625em;
-      padding-left: 0.75em;
-      padding-right: 0.75em;
-      border: 2px groove (internal value);
-    }
-
-    div {
-        width: 400px;
-        height: 100px;
-        margin: auto;
-    }
-    </style>
 
 </head>
 
 <body>
-<div>
-    <fieldset>
-        <legend>Tweet :</legend>
-        <center>
-            {{ tweet }}<br/>
-            {{ line }} <br/>
-        </center>
-    </fieldset>
+<div class="container">
+    <div style="width:400px;display:inline-block;">
+        <fieldset>
+            <legend>Tweet :</legend>
+            <center>
+                {{ tweet }}<br/>
+                {{ line }} <br/>
+            </center>
+        </fieldset>
 
-    <fieldset>
-        <legend>Photo :</legend>
-        <center>
-            <img src="{{ bg_photo_url | safe }}" height="500" width="550">
-        </center>
-    </fieldset>
-</div>
-<div>
-    <fieldset>
-        <legend>DFIR Stream :</legend>
-    </fieldset>
+        <fieldset>
+            <legend>Photo :</legend>
+            <center>
+                <img src="{{ bg_photo_url | safe }}" height="300" width="350">
+            </center>
+        </fieldset>
+    </div>
+    <div style="width:400px;display:inline-block;">
+        <fieldset>
+            <legend>DFIR Stream :</legend>
+            sdfljsdklfjslkdf<br>
+            sdfsdf <br>
+            lkjsdflkjsdf <br>
+            sfdsdf <br>
+        </fieldset>
+    </div>
 </div>
 </body>
 </html>
