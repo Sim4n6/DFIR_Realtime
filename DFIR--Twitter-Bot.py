@@ -28,10 +28,11 @@ def index():
 	tweets_search_4tag = tweepy_api.search("#DFIR", lang='en', rpp=100, tweet_mode="extended")
 	pp = pprint.PrettyPrinter(indent=4)
 	pp.pprint(tweets_search_4tag)
+	pp.pprint(dir(tweepy_api))
 
 	# cursor on the search
-	for status in tweepy_api.Cursor(tweepy_api.search("#DFIR", lang='en', rpp=100, tweet_mode="extended")).items():
-		pp.pprint(">>", status)
+	#for status in tweepy_api.cursor(tweepy_api.search("#DFIR", lang='en', rpp=100, tweet_mode="extended")).items():
+	#	pp.pprint(">>", status)
 
 	# get last tweet
 	last_tweet = tweets_search_4tag[0]
