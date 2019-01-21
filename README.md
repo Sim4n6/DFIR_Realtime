@@ -5,7 +5,7 @@ A Twitter Bot embedded inside a flasked web app to show :
  - Today Date and Random nice photo from Unsplash.
  
  # To access URL :
- [Py-Twitter-Bot--DFIR](http://py-twitter-bot--dfir.herokuapp.com/)
+ [DFIR-Realtime](http://dfir-realtime.herokuapp.com)
 
 # Requirements 
  - **Tweepy** : a python library for accessing and dealing with Twitter API.
