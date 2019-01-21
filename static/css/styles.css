@@ -19,3 +19,12 @@
         text-align: center;
     }
 
+    .left-blocks{
+        width:400px;
+        display:inline-block;
+    }
+
+    .right-blocks{
+        width:400px;
+        display:inline-block;
+    }
