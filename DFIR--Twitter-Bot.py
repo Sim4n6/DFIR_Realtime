@@ -55,6 +55,7 @@ def index():
 	bg_photo_custom_url = bg_photo_urls.raw + "&fit=clamp&h=300&w=350&auto=compress"
 
 	# the tweet
+	print(dir(api))
 	the_tweet = api.get_status(last_tweet, tweet_mode='extended')
 
 	return render_template("base.html", tweet=the_tweet, line=line, bg_photo_url=bg_photo_custom_url)
