@@ -1,7 +1,9 @@
 from flask import Flask, render_template, url_for
-from tweepy import API, OAuthHandler
-from unsplash.api import Api
+from tweepy import API as tw_API
+from tweepy import OAuthHandler
+from unsplash.api import Api as us_API
 from unsplash.auth import Auth
+from datetime import datetime as dt
 
 import pprint
 import os
@@ -22,7 +24,7 @@ def index():
 	auth.set_access_token(access_token, access_token_secret)
 
 	# Search for tag "DFIR" and get last_tweet
-	tweepy_api = API(auth)
+	tweepy_api = tw_API(auth)
 	tweets_search_4tag = tweepy_api.search("#DFIR", lang='en', rpp=30, tweet_mode="extended")
 	#pp = pprint.PrettyPrinter(indent=4)
 	#pp.pprint(tweets_search_4tag)
@@ -46,7 +48,7 @@ def index():
 
 	# Authentication and api instanciation
 	auth = Auth(client_id, "", "", "")
-	unsplash_api = Api(auth)
+	unsplash_api = us_API(auth)
 
 	# Get a random photo object using the api
 	bg_photo = unsplash_api.photo.random()
@@ -55,7 +57,10 @@ def index():
 	bg_photo_urls = bg_photo[0].urls
 	bg_photo_custom_url = bg_photo_urls.raw + "&fit=clamp&h=300&w=350&auto=compress"
 
-	return render_template("base.html", tweet=tweet_text, line=line, bg_photo_url=bg_photo_custom_url)
+	# Get now() datetime
+	now_dt = dt.now()
+
+	return render_template("base.html", tweet=tweet_text, line=line, bg_photo_url=bg_photo_custom_url, date_time=now_dt)
 
 
 if __name__ == '__main__':
