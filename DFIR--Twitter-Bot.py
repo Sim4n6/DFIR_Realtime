@@ -55,9 +55,10 @@ def index():
 	bg_photo_custom_url = bg_photo_urls.raw + "&fit=clamp&h=300&w=350&auto=compress"
 
 	# the tweet
-	the_tweet = tweepy_api.get_status(last_tweet.id)
+	the_tweet_status = tweepy_api.get_status(last_tweet.id, tweet_mode='extended')
+	tweet_text = the_tweet_status.text
 
-	return render_template("base.html", tweet=the_tweet, line=line, bg_photo_url=bg_photo_custom_url)
+	return render_template("base.html", tweet=tweet_text, line=line, bg_photo_url=bg_photo_custom_url)
 
 
 if __name__ == '__main__':
