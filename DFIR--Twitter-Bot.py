@@ -23,7 +23,7 @@ def index():
 
 	# Search for tag "DFIR" and get last_tweet
 	tweepy_api = API(auth)
-	tweets_search_4tag = tweepy_api.search("#DFIR", lang='en', rpp=30)
+	tweets_search_4tag = tweepy_api.search("#DFIR", lang='en', rpp=30, tweet_mode="extended")
 	#pp = pprint.PrettyPrinter(indent=4)
 	#pp.pprint(tweets_search_4tag)
 
@@ -56,7 +56,7 @@ def index():
 
 	# the tweet
 	the_tweet_status = tweepy_api.get_status(last_tweet.id, tweet_mode='extended')
-	tweet_text = the_tweet_status.full_text
+	tweet_text = last_tweet.full_text
 
 	return render_template("base.html", tweet=tweet_text, line=line, bg_photo_url=bg_photo_custom_url)
 
