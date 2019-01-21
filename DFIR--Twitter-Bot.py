@@ -19,15 +19,19 @@ app = Flask(__name__)
 @app.route("/")
 def index():
 
-	# Authentication and access to the API
+	# Authentication and access to the API of Tweepy
 	auth = OAuthHandler(consumer_key, consumer_secret)
 	auth.set_access_token(access_token, access_token_secret)
 
-	# Search for tag "DFIR" and get last_tweet
+	# Search for the tag "DFIR" and get last_tweet 100 tweets in 01 page
 	tweepy_api = tw_API(auth)
-	tweets_search_4tag = tweepy_api.search("#DFIR", lang='en', rpp=30, tweet_mode="extended")
-	#pp = pprint.PrettyPrinter(indent=4)
-	#pp.pprint(tweets_search_4tag)
+	tweets_search_4tag = tweepy_api.search("#DFIR", lang='en', rpp=100, page=1, tweet_mode="extended")
+	pp = pprint.PrettyPrinter(indent=4)
+	pp.pprint(tweets_search_4tag)
+
+	# cursor on the search
+	for status in tweepy_api.Cursor(tweepy_api.search("#DFIR", lang='en', rpp=100, page=1, tweet_mode="extended")).items():
+		pp.pprint(">>", status)
 
 	# get last tweet
 	last_tweet = tweets_search_4tag[0]
