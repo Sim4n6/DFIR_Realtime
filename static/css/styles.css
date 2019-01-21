@@ -15,7 +15,7 @@
       border: 2px groove (internal value);
     }
 
-    div.container {
+    .container {
         text-align: center;
     }
 
