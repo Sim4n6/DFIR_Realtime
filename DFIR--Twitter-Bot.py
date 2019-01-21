@@ -25,12 +25,12 @@ def index():
 
 	# Search for the tag "DFIR" and get last_tweet 100 tweets in 01 page
 	tweepy_api = tw_API(auth)
-	tweets_search_4tag = tweepy_api.search("#DFIR", lang='en', rpp=100, page=1, tweet_mode="extended")
+	tweets_search_4tag = tweepy_api.search("#DFIR", lang='en', rpp=100, tweet_mode="extended")
 	pp = pprint.PrettyPrinter(indent=4)
 	pp.pprint(tweets_search_4tag)
 
 	# cursor on the search
-	for status in tweepy_api.Cursor(tweepy_api.search("#DFIR", lang='en', rpp=100, page=1, tweet_mode="extended")).items():
+	for status in tweepy_api.Cursor(tweepy_api.search("#DFIR", lang='en', rpp=100, tweet_mode="extended")).items():
 		pp.pprint(">>", status)
 
 	# get last tweet
