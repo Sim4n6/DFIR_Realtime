@@ -56,8 +56,7 @@ def index():
 
 	# the tweet
 	the_tweet_status = tweepy_api.get_status(last_tweet.id, tweet_mode='extended')
-	print(dir(the_tweet_status))
-	tweet_text = the_tweet_status.text
+	tweet_text = the_tweet_status.full_text
 
 	return render_template("base.html", tweet=tweet_text, line=line, bg_photo_url=bg_photo_custom_url)
 
