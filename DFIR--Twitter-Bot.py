@@ -22,8 +22,8 @@ def index():
 	auth.set_access_token(access_token, access_token_secret)
 
 	# Search for tag "DFIR" and get last_tweet
-	api = API(auth)
-	tweets_search_4tag = api.search("#DFIR", lang='en', rpp=30)
+	tweepy_api = API(auth)
+	tweets_search_4tag = tweepy_api.search("#DFIR", lang='en', rpp=30)
 	#pp = pprint.PrettyPrinter(indent=4)
 	#pp.pprint(tweets_search_4tag)
 
@@ -45,18 +45,17 @@ def index():
 
 	# Authentication and api instanciation
 	auth = Auth(client_id, "", "", "")
-	api = Api(auth)
+	unsplash_api = Api(auth)
 
 	# Get a random photo object using the api
-	bg_photo = api.photo.random()
+	bg_photo = unsplash_api.photo.random()
 
 	# Get URLs  of the random photo to be set
 	bg_photo_urls = bg_photo[0].urls
 	bg_photo_custom_url = bg_photo_urls.raw + "&fit=clamp&h=300&w=350&auto=compress"
 
 	# the tweet
-	print(dir(api))
-	the_tweet = api.get_status(last_tweet, tweet_mode='extended')
+	the_tweet = tweepy_api.get_status(last_tweet, tweet_mode='extended')
 
 	return render_template("base.html", tweet=the_tweet, line=line, bg_photo_url=bg_photo_custom_url)
 
