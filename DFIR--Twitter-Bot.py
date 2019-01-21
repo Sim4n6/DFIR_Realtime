@@ -29,6 +29,7 @@ def index():
 
 	# get last tweet
 	last_tweet = tweets_search_4tag[0]
+	tweet_text = last_tweet.full_text
 
 	# store id of last_week_tweet in a file
 	with open("last_week_id.txt", 'w') as lst_hd:
@@ -53,10 +54,6 @@ def index():
 	# Get URLs  of the random photo to be set
 	bg_photo_urls = bg_photo[0].urls
 	bg_photo_custom_url = bg_photo_urls.raw + "&fit=clamp&h=300&w=350&auto=compress"
-
-	# the tweet
-	the_tweet_status = tweepy_api.get_status(last_tweet.id, tweet_mode='extended')
-	tweet_text = last_tweet.extended_tweet['full_text']
 
 	return render_template("base.html", tweet=tweet_text, line=line, bg_photo_url=bg_photo_custom_url)
 
