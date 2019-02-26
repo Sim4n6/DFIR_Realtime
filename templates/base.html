@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <link rel="favicon icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
-        {{ moment.include_jquery() }}
-        {{ moment.include_moment() }}
+    {{ moment.include_jquery() }}
+    {{ moment.include_moment() }}
     <title>DFIR-Realtime Dashboard (Twitter Bot)</title>
 
 </head>
@@ -19,6 +19,10 @@
 <div class="container">
     <div class="left-blocks">
         <fieldset>
+            <fieldset>
+                <legend>Date and Time :</legend>
+                <b>{{ moment().format('MMMM Do YYYY, h:mm A') }}</b>
+            </fieldset>
             <legend>Last Tweet :</legend>
             <center>
                 {{ tweet }}<br/>
@@ -33,14 +37,12 @@
         </fieldset>
     </div>
     <div class="right-blocks">
+
         <fieldset>
-            <legend>Date and Time : </legend>
-            <b>{{ moment().format('MMMM Do YYYY, h:mm A') }}</b>
-        </fieldset>
-        <fieldset>
-            <legend>Last 05 DFIR Tweets :</legend>
+            <legend>Last 05 #DFIR Tweets :</legend>
             {% for tweet in tweets %}
-            {{ tweet }}<br><hr>
+                {{ tweet }}<br>
+                <hr>
             {% endfor %}
         </fieldset>
     </div>
