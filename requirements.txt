@@ -2,3 +2,4 @@ flask>=1.0.2
 tweepy>=3.7.0
 gunicorn>=19.9.0
 python-unsplash>=1.0.1
+flask-moment
