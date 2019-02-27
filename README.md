@@ -1,7 +1,6 @@
 # DFIR_Realtime Dashboard
 A Twitter Bot embedded inside a flasked web app to show : 
- - The last 05 tweets.
- - Realtime Stream of #DFIR hashtag
+ - The last 05 tweets of the hashtag #DFIR
  - Today DateTime and Random nice photo from Unsplash.
  
  # To access URL :
